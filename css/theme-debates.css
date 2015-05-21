@@ -1,0 +1,52 @@
+/*
+@path-nv1: 		"..";
+@path-nv2: 		"../..";
+@path-nv3: 		"../../..";
+@path-nv4: 		"../../../..";
+@path-nv5: 		"../../../../..";
+
+@path-var-boots:    "bootstrap/variables.less";
+@path-mixins-boots: "bootstrap/mixins.less";
+@path-var-theme:    "theme/theme-variables.less";
+@path-less: 		"css/less";
+@path-participacao: "participacao-tema";
+*/
+.tabs-main .tabs-left > .nav-tabs {
+  border-bottom: 0;
+  float: left;
+  margin-right: 19px;
+  border-right: 1px solid #ddd;
+}
+.tabs-main .tabs-left > .nav-tabs > li {
+  float: none;
+}
+.tabs-main .tabs-left > .nav-tabs > li > a {
+  min-width: 74px;
+  margin-right: 0;
+  margin-bottom: 3px;
+  margin-right: -1px;
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px;
+}
+.tabs-main .tabs-left > .nav-tabs > li > a:hover,
+.tabs-main .tabs-left > .nav-tabs > li > a:focus {
+  border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+}
+.tabs-main .tabs-left > .nav-tabs > .active > a:hover,
+.tabs-main .tabs-left > .nav-tabs > .active > a:focus {
+  border-color: #ddd transparent #ddd #ddd;
+  *border-right-color: #ffffff;
+}
+.tabs-main .tabs-left .tab-content > .tab-pane {
+  display: none;
+}
+.tabs-main .tabs-left .tab-content > .active {
+  display: block;
+}
+.tabs-main .tabs-left .pill-content > .pill-pane {
+  display: none;
+}
+.tabs-main .tabs-left .pill-content > .active {
+  display: block;
+}

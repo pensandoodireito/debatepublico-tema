@@ -1,0 +1,56 @@
+@import "../../../participacao-tema/css/less/elements.less";
+.tabs-main {
+    .tabs-left {
+        & > .nav-tabs {
+            border-bottom: 0;
+            float: left;
+            margin-right: 19px;
+            border-right: 1px solid #ddd;
+            & > li {
+                float: none;
+                & > a {
+                    min-width: 74px;
+                    margin-right: 0;
+                    margin-bottom: 3px;
+                    margin-right: -1px;
+                    -webkit-border-radius: 4px 0 0 4px;
+                    -moz-border-radius: 4px 0 0 4px;
+                    border-radius: 4px 0 0 4px;
+                }
+            }
+        }
+        &>.nav-tabs {
+            &>li {
+                &>a {
+                    &:hover, &:focus {
+                        border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+                    }
+                }
+            }
+            &> .active {
+                &>a {
+                    &:hover, &:focus {
+                        border-color: #ddd transparent #ddd #ddd;
+                        *border-right-color: #ffffff;
+                    }
+                }
+            }
+        }
+        .tab-content {
+            &>.tab-pane {
+                display: none;
+            }
+            &>.active {
+                display: block;
+            }
+        }
+        .pill-content {
+            &>.pill-pane {
+                display: none;
+            }
+            &>.active {
+                display: block;
+            }
+        }
+    }
+}

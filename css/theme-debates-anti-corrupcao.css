@@ -1,0 +1,41 @@
+/*
+@path-nv1: 		"..";
+@path-nv2: 		"../..";
+@path-nv3: 		"../../..";
+@path-nv4: 		"../../../..";
+@path-nv5: 		"../../../../..";
+
+@path-var-boots:    "bootstrap/variables.less";
+@path-mixins-boots: "bootstrap/mixins.less";
+@path-var-theme:    "theme/theme-variables.less";
+@path-less: 		"css/less";
+@path-participacao: "participacao-tema";
+*/
+body {
+  height: 100% !important;
+}
+#anti-corr .anti-corr-top {
+  background: url("../images/anti-corrupcao/bck-anti-corrupcao.jpg") repeat #5d7987;
+  padding: 40px 0;
+  margin: 0;
+}
+#anti-corr .anti-corr-oque {
+  background-color: #fef4e5;
+  padding: 40px 0;
+  margin: 0;
+}
+/*#anti-corr {
+    display: table;
+    width: 100%;
+    height: 100%;
+    padding: 100px 0;
+    //color: @light;
+    //background: url("../images/anti-corrupcao/bck-anti-corrupcao.jpg") no-repeat center center scroll #666565;
+    //background: url("../images/anti-corrupcao/bck-anti-corrupcao.jpg") repeat #074947;
+    background-color:  #074947;
+    //-webkit-background-size: cover;
+    //-moz-background-size: cover;
+    //background-size: cover;
+    //-o-background-size: cover;
+}
+*/
