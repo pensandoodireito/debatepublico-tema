@@ -1,4 +1,33 @@
 <?php get_header(); ?>
+<!-- Código bicheira, só para testar as repetiçoes de li -->
+<?php
+	$repeteLi = '';
+	//$repeteLi .=  "";
+	for($i=0;$i<5;$i++)
+	{
+	$repeteLi .= "
+	<li class=\"list-group-item\">
+								<div class=\"comments-line\">
+															<div class=\"comments-image\">
+																						<img src=\"http://placehold.it/80\" class=\"img-circle img-responsive\" alt=\"\" />
+															</div>
+															<div class=\"comments-text\">
+																						<div class=\"comment-content\">
+																													<div class=\"comment-comment\">
+																																				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rhoncus nulla sed egestas pretium. Nullam porttitor felis nec nulla congue cursus. Aenean nec eleifend quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
+																													</div>
+																													<div class=\"comments-mic-info\">
+																																				<small><a href=\"#\">jõao Paulo da Silva</a> <span class=\"ml-md\"><i class=\"fa fa-clock-o\"></i> Há 15 min</span></small>
+																													</div>
+																						</div>
+															</div>
+								</div>
+	</li>
+	";
+	}
+	//$repeteLi .="";
+	//echo $repeteLi;
+?>
 <div id="anti-corr">
 	<div class="anti-corr-top">
 		<div class="container">
@@ -28,6 +57,9 @@
 		</div>
 	</div>
 	<div class="anti-corr-eixos">
+		<div class="container">
+			<h2 class="font-roboto red">Eixos em debate</h2>
+		</div>
 		<div class="tabs-main">
 			<div class="container">
 				<div class="row">
@@ -35,20 +67,85 @@
 						<!-- tabs left -->
 						<div class="tabs-left">
 							<ul class="nav nav-tabs">
-								<li><a href="#a" data-toggle="tab">One</a></li>
-								<li class="active"><a href="#b" data-toggle="tab">Two</a></li>
-								<li><a href="#c" data-toggle="tab">Twee</a></li>
+								<li class="active"><a href="#content-tab-01" data-toggle="tab">Razões em segunda instância: revogação do § 4º do art. 600 do Código de Processo Penal</a></li>
+								<li><a href="#content-tab-02" data-toggle="tab">Razões em segunda instância: revogação do § 4º do art. 600 do Código de Processo Penal</a></li>
+								<li><a href="#content-tab-03" data-toggle="tab">Razões em segunda instância: revogação do § 4º do art. 600 do Código de Processo Penal</a></li>
 							</ul>
 							<div class="tab-content">
-								<div class="tab-pane active" id="a">Lorem ipsum dolor sit amet, charetra varius quam sit amet vulputate.
-								Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero.</div>
-								<div class="tab-pane" id="b">Secondo sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
-								Aliquam in felis sit amet augue.</div>
-								<div class="tab-pane" id="c">Thirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
-								Quisque mauris augue, molestie tincidunt condimentum vitae. </div>
+								<!-- tab 01 -->
+								<div class="tab-pane active" id="content-tab-01">
+									<p><strong class="red">Lorem ipsum dolor sit amet:</strong> consectetur adipiscing elit. Donec laoreet ex dignissim dui tincidunt, a hendrerit lorem vulputate.</p>
+									<div class="comments-structure">
+										
+										<div class="comments-main">
+											<div class="one-coluns">
+												<div class="comments-colun">
+												<div class="comments-header"><p class="red"><strong>Razões em segunda instância: revogação do § 4º do art. 600 do Código de Processo Penal</strong></p></div>
+													<ul class="list-group">
+														<?php echo "$repeteLi"; ?>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /tab 01 -->
+								<!-- tab 02 -->
+								<div class="tab-pane" id="content-tab-02">
+									<p><strong class="red">Lorem ipsum dolor sit amet:</strong> consectetur adipiscing elit. Donec laoreet ex dignissim dui tincidunt, a hendrerit lorem vulputate.</p>
+									<div class="comments-structure">
+										<div class="comments-main">
+											<div class="two-coluns">
+												<div class="comments-colun">
+												<div class="comments-header"><p class="red"><strong>Razões em segunda instância: revogação do § 4º do art. 600 do Código de Processo Penal</strong></p></div>
+													<ul class="list-group">
+														<?php echo "$repeteLi"; ?>
+													</ul>
+												</div>
+												<div class="comments-colun">
+												<div class="comments-header"><p class="red"><strong>Embargos infringentes e de nulidade: revogação do art. 609 do Código de Processo Penal...</strong></p></div>
+													<ul class="list-group">
+														<?php echo "$repeteLi"; ?>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /tab 02 -->
+								<!-- tab 03 -->
+								<div class="tab-pane" id="content-tab-03">
+									<p><strong class="red">Lorem ipsum dolor sit amet:</strong> consectetur adipiscing elit. Donec laoreet ex dignissim dui tincidunt, a hendrerit lorem vulputate.</p>
+									<div class="comments-structure">
+										
+										<div class="comments-main">
+											<div class="tree-coluns">
+												<div class="comments-colun">
+													<div class="comments-header"><p class="red"><strong>Razões em segunda instância: revogação do § 4º do art. 600 do Código de Processo Penal</strong></p></div>
+													<ul class="list-group">
+														<?php echo "$repeteLi"; ?>
+													</ul>
+												</div>
+												<div class="comments-colun">
+												<div class="comments-header"><p class="red"><strong>Razões em segunda instância: revogação do § 4º do art. 600 do Código de Processo Penal</strong></p></div>
+													<ul class="list-group">
+														<?php echo "$repeteLi"; ?>
+													</ul>
+												</div>
+												<div class="comments-colun">
+												<div class="comments-header"><p class="red"><strong>Razões em segunda instância: revogação do § 4º do art. 600 do Código de Processo Penal</strong></p></div>
+													<ul class="list-group">
+														<?php echo "$repeteLi"; ?>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /tab 03 -->
 							</div>
 						</div>
-						<!-- /tabs -->
+						<!-- /tabs left -->
 					</div>
 				</div>
 			</div>

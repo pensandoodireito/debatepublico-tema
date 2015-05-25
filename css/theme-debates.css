@@ -11,35 +11,65 @@
 @path-less: 		"css/less";
 @path-participacao: "participacao-tema";
 */
+.tabs-main {
+  height: 100%;
+}
+.tabs-main .tabs-left {
+  height: 100%;
+  display: table;
+  table-layout: fixed;
+}
+.tabs-main .tabs-left:before,
+.tabs-main .tabs-left:after {
+  content: " ";
+  display: table;
+}
+.tabs-main .tabs-left:after {
+  clear: both;
+}
 .tabs-main .tabs-left > .nav-tabs {
   border-bottom: 0;
-  float: left;
-  margin-right: 19px;
-  border-right: 1px solid #ddd;
+  width: 20%;
+  display: table-cell;
 }
 .tabs-main .tabs-left > .nav-tabs > li {
   float: none;
 }
 .tabs-main .tabs-left > .nav-tabs > li > a {
-  min-width: 74px;
   margin-right: 0;
   margin-bottom: 3px;
   margin-right: -1px;
-  -webkit-border-radius: 4px 0 0 4px;
-  -moz-border-radius: 4px 0 0 4px;
-  border-radius: 4px 0 0 4px;
+  border-radius: 0;
+  border: 0;
+  font-weight: 700;
+  color: #515151;
 }
-.tabs-main .tabs-left > .nav-tabs > li > a:hover,
-.tabs-main .tabs-left > .nav-tabs > li > a:focus {
-  border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+.tabs-main .tabs-left > .nav-tabs > .active > a {
+  font-weight: 700;
+  color: #bc3f38;
+}
+.tabs-main .tabs-left > .nav-tabs > .active > a:before {
+  position: absolute;
+  font-family: 'FontAwesome';
+  top: 30%;
+  right: 0;
+  content: "\f054";
+  color: #fdd0cd;
 }
 .tabs-main .tabs-left > .nav-tabs > .active > a:hover,
 .tabs-main .tabs-left > .nav-tabs > .active > a:focus {
   border-color: #ddd transparent #ddd #ddd;
   *border-right-color: #ffffff;
 }
+.tabs-main .tabs-left .tab-content {
+  width: 80%;
+  background-color: #fff;
+  height: 100%;
+  display: table-cell;
+}
 .tabs-main .tabs-left .tab-content > .tab-pane {
   display: none;
+  padding: 20px;
 }
 .tabs-main .tabs-left .tab-content > .active {
   display: block;
@@ -49,4 +79,100 @@
 }
 .tabs-main .tabs-left .pill-content > .active {
   display: block;
+}
+.comments-structure .list-group {
+  margin-bottom: 0;
+}
+.comments-structure .label-info {
+  float: right;
+}
+.comments-structure li.list-group-item {
+  border-radius: 0;
+  border: solid #dddddd;
+  border-width: 1px 0 0 0;
+  padding: 10px;
+}
+.comments-structure li.list-group-item:hover {
+  background-color: rgba(86, 61, 124, 0.1);
+}
+.comments-structure li.list-group-item:first-child {
+  border-top: none;
+}
+.comments-structure .comments-line {
+  margin: 0 -15px 0 -15px;
+}
+.comments-structure .comments-line:before,
+.comments-structure .comments-line:after {
+  content: " ";
+  display: table;
+}
+.comments-structure .comments-line:after {
+  clear: both;
+}
+.comments-structure .comments-line .comments-image {
+  float: left;
+  padding: 0 15px;
+}
+.comments-structure .comments-line .comments-text {
+  font-size: 12px;
+  float: left;
+  width: 90%;
+  padding: 0 15px;
+}
+.comments-structure .comments-line .comments-mic-info {
+  color: #666666;
+  font-size: 11px;
+}
+.comments-structure .comments-main {
+  margin: 20px -15px 0 -15px;
+}
+.comments-structure .comments-main:before,
+.comments-structure .comments-main:after {
+  content: " ";
+  display: table;
+}
+.comments-structure .comments-main:after {
+  clear: both;
+}
+.comments-structure .comments-main .comments-header {
+  padding: 0 15px;
+}
+.comments-structure .comments-main .one-coluns {
+  padding: 0 15px;
+}
+.comments-structure .comments-main .one-coluns .comments-image {
+  width: 10%;
+}
+.comments-structure .comments-main .one-coluns .comments-text {
+  width: 90%;
+}
+.comments-structure .comments-main .two-coluns .comments-image {
+  width: 20%;
+}
+.comments-structure .comments-main .two-coluns .comments-text {
+  width: 80%;
+}
+.comments-structure .comments-main .two-coluns .comments-colun {
+  float: left;
+  width: 50%;
+  padding: 0 15px;
+  border-left: 1px solid #ccc;
+}
+.comments-structure .comments-main .two-coluns .comments-colun:first-child {
+  border-left: 0;
+}
+.comments-structure .comments-main .tree-coluns .comments-image {
+  width: 25%;
+}
+.comments-structure .comments-main .tree-coluns .comments-text {
+  width: 75%;
+}
+.comments-structure .comments-main .tree-coluns .comments-colun {
+  float: left;
+  width: 33.3333%;
+  padding: 0 15px;
+  border-left: 1px solid #ccc;
+}
+.comments-structure .comments-main .tree-coluns .comments-colun:first-child {
+  border-left: 0;
 }

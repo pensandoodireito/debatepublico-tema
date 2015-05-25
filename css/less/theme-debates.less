@@ -1,35 +1,41 @@
 @import "../../../participacao-tema/css/less/elements.less";
 .tabs-main {
+    height: 100%;
     .tabs-left {
+        height: 100%;
+        display: table;
+        table-layout: fixed;
+        .clearfix();
         & > .nav-tabs {
             border-bottom: 0;
-            float: left;
-            margin-right: 19px;
-            border-right: 1px solid #ddd;
+            width: 20%;
+            display: table-cell;
             & > li {
                 float: none;
                 & > a {
-                    min-width: 74px;
                     margin-right: 0;
                     margin-bottom: 3px;
                     margin-right: -1px;
-                    -webkit-border-radius: 4px 0 0 4px;
-                    -moz-border-radius: 4px 0 0 4px;
-                    border-radius: 4px 0 0 4px;
-                }
-            }
-        }
-        &>.nav-tabs {
-            &>li {
-                &>a {
-                    &:hover, &:focus {
-                        border-color: #eeeeee #dddddd #eeeeee #eeeeee;
-                    }
+                    border-radius: 0;
+                    border: 0;
+                    font-weight: 700;
+                    color: #515151;
                 }
             }
             &> .active {
                 &>a {
-                    &:hover, &:focus {
+                    font-weight: 700;
+                    color: #bc3f38;
+                    &:before {
+                        position: absolute;
+                        font-family: 'FontAwesome';
+                        top: 30%;
+                        right: 0;
+                        content: "\f054";
+                        color: #fdd0cd;
+                    }
+                    &:hover,
+                    &:focus {
                         border-color: #ddd transparent #ddd #ddd;
                         *border-right-color: #ffffff;
                     }
@@ -37,12 +43,18 @@
             }
         }
         .tab-content {
+            width: 80%;
+            background-color: #fff;
+            height: 100%;
+            display: table-cell;
             &>.tab-pane {
                 display: none;
+                padding: 20px;
             }
             &>.active {
                 display: block;
             }
+            .comments-widget {}
         }
         .pill-content {
             &>.pill-pane {
@@ -50,6 +62,95 @@
             }
             &>.active {
                 display: block;
+            }
+        }
+    }
+}
+
+.comments-structure {
+    .list-group {
+        margin-bottom: 0;
+    }
+    .label-info {
+        float: right;
+    }
+    li.list-group-item {
+        border-radius: 0;
+        border: solid #dddddd;
+        border-width: 1px 0 0 0;
+        padding: 10px;
+        &:hover {
+            background-color: rgba(86, 61, 124, .1);
+        }
+        &:first-child {
+            border-top: none;
+        }
+    }
+    .comments-line {
+        margin: 0 -15px 0 -15px;
+        .clearfix();
+        .comments-image {
+            float: left;
+            padding: 0 15px;
+        }
+        .comments-text {
+            font-size: 12px;
+            float: left;
+            width: 90%;
+            padding: 0 15px;
+        }
+        .comments-mic-info {
+            color: #666666;
+            font-size: 11px;
+        }
+    }
+    .comments-main {
+        .clearfix();
+        margin: 20px -15px 0 -15px;
+        .comments-header {
+            padding: 0 15px;
+        }
+        .one-coluns {
+            padding: 0 15px;
+            .comments-image {
+                width: 10%;
+            }
+            .comments-text {
+                width: 90%;
+            }
+        }
+        .two-coluns {
+            .comments-image {
+                width: 20%;
+            }
+            .comments-text {
+                width: 80%;
+            }
+            .comments-colun {
+                float: left;
+                width: 50%;
+                padding: 0 15px;
+                border-left: 1px solid #ccc;
+                &:first-child {
+                    border-left: 0;
+                }
+            }
+        }
+        .tree-coluns {
+            .comments-image {
+                width: 25%;
+            }
+            .comments-text {
+                width: 75%;
+            }
+            .comments-colun {
+                float: left;
+                width: 33.3333%;
+                padding: 0 15px;
+                border-left: 1px solid #ccc;
+                &:first-child {
+                    border-left: 0;
+                }
             }
         }
     }
