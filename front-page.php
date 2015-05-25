@@ -34,18 +34,43 @@
                     <div class="col-xs-12">
                         <!-- tabs left -->
                         <div class="tabs-left">
-                            <ul class="nav nav-tabs">
-                                <li><a href="#a" data-toggle="tab">One</a></li>
-                                <li class="active"><a href="#b" data-toggle="tab">Two</a></li>
-                                <li><a href="#c" data-toggle="tab">Twee</a></li>
-                            </ul>
+                            <?php
+                                $eixos = get_terms('tema', array(
+                                    'hide_empty' => 0
+                                    )
+                                );
+                                if ( empty( $eixos ) || is_wp_error( $eixos ) ) {
+                                    echo 'Nenhum eixo cadastrado';
+                                } else {
+                                    echo '<ul class="nav nav-tabs">';
+                                    $first = true;
+                                    foreach( $eixos as $eixo ) {
+                                        echo '<li';
+                                        if( $first ) {
+                                            echo ' class="active"';
+                                            $first = false;
+                                        }
+                                        echo '><a href="#' . $eixo->term_id. '" data-toggle="tab">' . $eixo->name . '</a></li>';
+                                    }
+                                    echo '</ul>';
+                                }
+                            ?>
                             <div class="tab-content">
-                                <div class="tab-pane active" id="a">Lorem ipsum dolor sit amet, charetra varius quam sit amet vulputate.
-                                Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero.</div>
-                                <div class="tab-pane" id="b">Secondo sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
-                                Aliquam in felis sit amet augue.</div>
-                                <div class="tab-pane" id="c">Thirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
-                                Quisque mauris augue, molestie tincidunt condimentum vitae. </div>
+                            <?php
+                                if ( !empty( $eixos ) && !is_wp_error( $eixos ) ) {
+                                    $first = true;
+                                    foreach( $eixos as $eixo ) {
+                                        echo '<div class="tab-pane';
+                                        if( $first ) {
+                                             echo ' active';
+                                             $first = false;
+                                        }
+                                        echo '" id="' . $eixo->term_id . '">';
+                                        echo $eixo->description;
+                                        echo '</div>';
+                                    }
+                                }
+                            ?>
                             </div>
                         </div>
                         <!-- /tabs -->
