@@ -66,12 +66,43 @@
 					<div class="col-xs-12">
 						<!-- tabs left -->
 						<div class="tabs-left">
-							<ul class="nav nav-tabs">
-								<li class="active"><a href="#content-tab-01" data-toggle="tab">Razões em segunda instância: revogação do § 4º do art. 600 do Código de Processo Penal</a></li>
-								<li><a href="#content-tab-02" data-toggle="tab">Razões em segunda instância: revogação do § 4º do art. 600 do Código de Processo Penal</a></li>
-								<li><a href="#content-tab-03" data-toggle="tab">Razões em segunda instância: revogação do § 4º do art. 600 do Código de Processo Penal</a></li>
-							</ul>
+                            <?php
+                                $eixos = get_terms('tema', array(
+                                    'hide_empty' => 0
+                                    )
+                                );
+                                if ( empty( $eixos ) || is_wp_error( $eixos ) ) {
+                                    echo 'Nenhum eixo cadastrado';
+                                } else {
+                                    echo '<ul class="nav nav-tabs">';
+                                    $first = true;
+                                    foreach( $eixos as $eixo ) {
+                                        echo '<li';
+                                        if( $first ) {
+                                            echo ' class="active"';
+                                            $first = false;
+                                        }
+                                        echo '><a href="#' . $eixo->term_id. '" data-toggle="tab">' . $eixo->name . '</a></li>';
+                                    }
+                                    echo '</ul>';
+                                }
+                            ?>
 							<div class="tab-content">
+                            <?php
+                                if ( !empty( $eixos ) && !is_wp_error( $eixos ) ) {
+                                    $first = true;
+                                    foreach( $eixos as $eixo ) {
+                                        echo '<div class="tab-pane';
+                                        if( $first ) {
+                                             echo ' active';
+                                             $first = false;
+                                        }
+                                        echo '" id="' . $eixo->term_id . '">';
+                                        echo $eixo->description;
+                                        echo '</div>';
+                                    }
+                                }
+                            ?>
 								<!-- tab 01 -->
 								<div class="tab-pane active" id="content-tab-01">
 									<p><strong class="red">Lorem ipsum dolor sit amet:</strong> consectetur adipiscing elit. Donec laoreet ex dignissim dui tincidunt, a hendrerit lorem vulputate.</p>
@@ -109,6 +140,7 @@
 													</ul>
 												</div>
 											</div>
+
 										</div>
 									</div>
 								</div>
