@@ -14,6 +14,9 @@
 .tabs-main {
   height: 100%;
 }
+.tabs-main .nav {
+  vertical-align: top;
+}
 .tabs-main .tabs-left {
   height: 100%;
   display: table;
@@ -134,45 +137,64 @@
 .comments-structure .comments-main:after {
   clear: both;
 }
+.comments-structure .comments-main .comments-col {
+  min-height: 300px;
+}
 .comments-structure .comments-main .comments-header {
   padding: 0 15px;
 }
-.comments-structure .comments-main .one-coluns {
+.comments-structure .comments-main .one-col {
   padding: 0 15px;
 }
-.comments-structure .comments-main .one-coluns .comments-image {
+.comments-structure .comments-main .one-col .comments-image {
   width: 10%;
 }
-.comments-structure .comments-main .one-coluns .comments-text {
+.comments-structure .comments-main .one-col .comments-text {
   width: 90%;
 }
-.comments-structure .comments-main .two-coluns .comments-image {
+.comments-structure .comments-main .two-col:before,
+.comments-structure .comments-main .two-col:after {
+  content: " ";
+  display: table;
+}
+.comments-structure .comments-main .two-col:after {
+  clear: both;
+}
+.comments-structure .comments-main .two-col .comments-image {
   width: 20%;
 }
-.comments-structure .comments-main .two-coluns .comments-text {
+.comments-structure .comments-main .two-col .comments-text {
   width: 80%;
 }
-.comments-structure .comments-main .two-coluns .comments-colun {
+.comments-structure .comments-main .two-col .comments-col {
   float: left;
   width: 50%;
   padding: 0 15px;
   border-left: 1px solid #ccc;
 }
-.comments-structure .comments-main .two-coluns .comments-colun:first-child {
+.comments-structure .comments-main .two-col .comments-col:first-child {
   border-left: 0;
 }
-.comments-structure .comments-main .tree-coluns .comments-image {
+.comments-structure .comments-main .three-col:before,
+.comments-structure .comments-main .three-col:after {
+  content: " ";
+  display: table;
+}
+.comments-structure .comments-main .three-col:after {
+  clear: both;
+}
+.comments-structure .comments-main .three-col .comments-image {
   width: 25%;
 }
-.comments-structure .comments-main .tree-coluns .comments-text {
+.comments-structure .comments-main .three-col .comments-text {
   width: 75%;
 }
-.comments-structure .comments-main .tree-coluns .comments-colun {
+.comments-structure .comments-main .three-col .comments-col {
   float: left;
   width: 33.3333%;
   padding: 0 15px;
   border-left: 1px solid #ccc;
 }
-.comments-structure .comments-main .tree-coluns .comments-colun:first-child {
+.comments-structure .comments-main .three-col .comments-col:first-child {
   border-left: 0;
 }

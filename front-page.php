@@ -1,23 +1,13 @@
 <?php get_header(); ?>
-<!-- Código bicheira, só para testar as repetiçoes de li -->
-<?php
-    $repeteLi = '';
-    //$repeteLi .=  "";
-    for($i=0;$i<5;$i++)
-    {
-    $repeteLi .= "
-    ";
-    }
-?>
 <div id="anti-corr">
     <div class="anti-corr-top">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 text-center">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/anti-corrupcao/logo-anti-corrupcao.png" class="img-adptive" alt="Logo: Medidas de combate à corrupção e a impunidade ">
+                <div class="col-md-offset-1 col-sm-4 text-center">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/anti-corrupcao/logo-anti-corrupcao-v02.png" class="img-adptive" alt="Logo: Medidas de combate à corrupção e a impunidade ">
                 </div>
                 <div class="col-sm-6 col-md-4 white">
-                    <h1 class="font-roboto h1 mt-md"><strong>Participe, opine, ajude!</strong></h1>
+                    <h1 class="font-roboto h1 mt-lg"><strong>Participe, opine, ajude!</strong></h1>
                     <p class="mt-md">As medidas de enfrentamento à impunidade e a corrupção são uma série de propostas de reformas legais com o objetivo de tornar mais eficiente o processo penal</p>
                 </div>
             </div>
@@ -49,7 +39,9 @@
                         <div class="tabs-left">
                             <?php
                                 $eixos = get_terms('tema', array(
-                                    'hide_empty' => 0
+                                    'hide_empty' => 0,
+                                    'orderby' => 'name',
+                                    'order' => 'DESC'
                                     )
                                 );
                                 if ( empty( $eixos ) || is_wp_error( $eixos ) ) {
@@ -94,14 +86,13 @@
                                         // lista de pautas deste eixo.
                                         $pautas_args = array(
                                             'post_type' => 'pauta',
-                                            'tax_query' => array(
-                                                array(
+                                            'tax_query' => array(array(
                                                     'taxonomy' => 'tema',
-                                                    'field' => 'name',
-                                                    'terms' => $eixo->name
-                                                )
-                                            ),
-                                        );
+                                                    'field' => 'term_id',
+                                                    'terms' => $eixo->term_id
+                                                    ))
+                                            );
+
                                         $pautas_do_eixo = new WP_Query( $pautas_args );
 
                                         // IDs das pautas deste eixo
@@ -138,14 +129,30 @@
                                             }
                                         }
 
+                                        if (count($ids_pautas_filtradas) >= count($ids_tres_pautas) &&
+                                             count($ids_tres_pautas) < 3) {
+                                            foreach ( $ids_pautas_filtradas as $id ) {
+                                                if ( !in_array($id, $ids_tres_pautas) ) {
+                                                    $ids_tres_pautas[] = $id;
+                                                }
+                                                if ( count($ids_tres_pautas) == 3 ) {
+                                                    break;
+                                                }
+                                            }
+                                        }
+
                                         // Agora sim seleciona só os três posts
                                         // com comentários mais recentes
                                         // e recupera eles ordenados de acordo
                                         // com o array criado anteriormente
-                                        $pautas_args[ 'nopagin' ] = true;
-                                        $pautas_args[ 'posts_per_page' ] = 3;
-                                        $pautas_args[ 'post__in' ] = $ids_tres_pautas;
-                                        $pautas_args[ 'orderby' ] = 'post__in';
+                                        if ( count($ids_tres_pautas) > 0 ) {
+                                            $pautas_args = array();
+                                            $pautas_args['post_type'] = 'pauta';
+                                            $pautas_args[ 'nopagin' ] = true;
+                                            $pautas_args[ 'posts_per_page' ] = 3;
+                                            $pautas_args[ 'post__in' ] = $ids_tres_pautas;
+                                            $pautas_args[ 'orderby' ] = 'post__in';
+                                        }
 
                                         $pautas = new WP_Query( $pautas_args );
 
@@ -155,10 +162,10 @@
                                             echo '<div class="comments-structure">';
                                             echo '<div class="comments-main">';
                                             //Eixo com pauta única
-                                            if ( $pautas->post_count == 1 ) {
+                                            if ( count($ids_tres_pautas) == 1 ) {
                                                 $pautas->the_post();
-                                                echo '<div class="one-coluns">';
-                                                    echo '<div class="comments-colun">';
+                                                echo '<div class="one-col">';
+                                                    echo '<div class="comments-col">';
                                                         echo '<div class="comments-header">';
                                                             echo '<p class="red">';
                                                                 echo '<strong><a href="' . get_permalink( get_the_ID() ) . '">' . get_the_title() . '</a></strong>';
@@ -198,13 +205,13 @@
                                                             }
                                                             echo '</ul>'; //list-group
                                                         }
-                                                    echo '</div>'; //comments-colun
-                                                echo '</div>'; //one-coluns
-                                            } else if ( $pauta->post_count == 2 ) {
-                                                echo '<div class="two-coluns">';
+                                                    echo '</div>'; //comments-col
+                                                echo '</div>'; //one-col
+                                            } else if ( count($ids_tres_pautas) == 2 ) {
+                                                echo '<div class="two-col">';
                                                     while ( $pautas->have_posts() ) {
                                                         $pautas->the_post();
-                                                        echo '<div class="comments-colun">';
+                                                        echo '<div class="comments-col">';
                                                             echo '<div class="comments-header">';
                                                                 echo '<p class="red">';
                                                                     echo '<strong><a href="' . get_permalink( get_the_ID() ) . '">' . get_the_title() . '</a></strong>';
@@ -244,14 +251,14 @@
                                                                 }
                                                                 echo '</ul>'; //list-group
                                                             }
-                                                        echo '</div>'; //comments-colun
+                                                        echo '</div>'; //comments-col
                                                     }
-                                                echo '</div>'; //three-coluns
+                                                echo '</div>'; //three-col
                                             } else {
-                                                echo '<div class="three-coluns">';
+                                                echo '<div class="three-col">';
                                                     while ( $pautas->have_posts() ) {
                                                         $pautas->the_post();
-                                                        echo '<div class="comments-colun">';
+                                                        echo '<div class="comments-col">';
                                                             echo '<div class="comments-header">';
                                                                 echo '<p class="red">';
                                                                     echo '<strong><a href="' . get_permalink( get_the_ID() ) . '">' . get_the_title() . '</a></strong>';
@@ -291,9 +298,9 @@
                                                                 }
                                                                 echo '</ul>'; //list-group
                                                             }
-                                                        echo '</div>'; //comments-colun
+                                                        echo '</div>'; //comments-col
                                                     }
-                                                echo '</div>'; //three-coluns
+                                                echo '</div>'; //three-col
                                             }
                                             echo '</div>'; //comments-main
                                             echo '</div>'; //comments-structure
