@@ -4,11 +4,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-offset-1 col-sm-4 text-center">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/anti-corrupcao/logo-anti-corrupcao-v02.png" class="img-adptive" alt="Logo: Medidas de combate à corrupção e a impunidade ">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/anti-corrupcao/logo-anti-corrupcao-v02.png" class="img-adptive mt-lg" alt="Logo: Medidas de combate à corrupção e a impunidade ">
                 </div>
-                <div class="col-sm-6 col-md-4 white">
+                <div class="col-md-offset-1 col-sm-6 col-md-4 white">
                     <h1 class="font-roboto h1 mt-lg"><strong>Participe, opine, ajude!</strong></h1>
-                    <p class="mt-md">As medidas de enfrentamento à impunidade e a corrupção são uma série de propostas de reformas legais com o objetivo de tornar mais eficiente o processo penal</p>
+                    <p class="mt-md">Esta consulta pública visa a proporcionar a mais ampla participação da sociedade na construção de ideias e soluções para temas essenciais a este enfrentamento: a eficiência e a eficácia de processos judiciais e administrativos. Opine. Participe.</p>
                 </div>
             </div>
         </div>
@@ -18,8 +18,7 @@
             <div class="row">
                 <div class="col-sm-8">
                     <h2 class="font-roboto red">O que é?</h2>
-                    <p class="mt-md">Muitas medidas voltadas à prevenção e ao enfrentamento à corrupção e à impunidade vem sendo implementadas, mas há contínua necessidade de aperfeiçoamento deste sistema anticorrupção.</p>
-                    <p class="mt-md">Conforme as debilidades das estruturas são constatadas e são apresentadas soluções, coloca-se luz sobre novos desafios que precisam ser enfrentados.</p>
+                    <p class="mt-md">O enfrentamento da corrupção depende da ação integrada e articulada de todos os órgãos estatais, abarcando os três poderes de todas as esferas da Federação, e do envolvimento da sociedade civil, fundamental para a erradicação deste problema.</p>
                 </div>
                 <div class="col-sm-4 text-center">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/anti-corrupcao/img-anti-corrupcao-001.png" class="img-adptive" alt="Logo: Medidas de combate à corrupção e a impunidade ">
@@ -37,6 +36,7 @@
                     <div class="col-xs-12">
                         <!-- tabs left -->
                         <div class="tabs-left">
+
                             <?php
                                 $eixos = get_terms('tema', array(
                                     'hide_empty' => 0,
@@ -317,5 +317,79 @@
             </div>
         </div>
     </div>
+    <div class="ficha-tecnica">
+        <div class="container">
+            <div class="row">
+                <h2 class="font-roboto red">Fique por dentro do debate</h2>
+            </div>
+            <div class="row mt-md">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Ficha técnica</div>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <p><small><i class="fa fa-calendar divider-right"></i> Data de abertura:</small></p>
+                                    <p class="h4"><strong>00 de Janeiro de 0000</strong></p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p><small><i class="fa fa-list-ol divider-right"></i> Fase do debate:</small></p>
+                                    <p class="h4"><strong>Abertura</strong></p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p><small><i class="fa fa-calendar divider-right"></i> Data de encerramento:</small></p>
+                                    <p class="h4"><strong>00 de Janeiro de 0000</strong></p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p><small><i class="fa fa-gavel divider-right"></i> Lei:</small></p>
+                                    <p class="h5"><strong>000.000 de 23 de abril de 2014</strong></p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p><small><i class="fa fa-list-ol divider-right"></i> Contato:</small></p>
+                                    <p><strong>debate@mj.gov.br</strong></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/anti-corrupcao/img-anti-corrupcao-002.png" class="img-adptive" alt="Logo: Medidas de combate à corrupção e a impunidade ">
+</a>
+                                <div class="caption">
+                                    <h3 class="red"><a href="#">Lorem ipsum dolor sit amet</a></h3>
+                                    <p><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae nisi molestie, hendrerit velit ut, ornare dolor</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/anti-corrupcao/img-anti-corrupcao-001.png" class="img-adptive" alt="Logo: Medidas de combate à corrupção e a impunidade ">
+</a>
+                                <div class="caption">
+                                    <h3 class="red"><a href="#">Lorem ipsum dolor sit amet</a></h3>
+                                    <p><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae nisi molestie, hendrerit velit ut, ornare dolor</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/anti-corrupcao/img-anti-corrupcao-002.png" class="img-adptive" alt="Logo: Medidas de combate à corrupção e a impunidade ">
+</a>
+                                <div class="caption">
+                                    <h3 class="red"><a href="#">Lorem ipsum dolor sit amet</a></h3>
+                                    <p><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae nisi molestie, hendrerit velit ut, ornare dolor</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+  <?php get_template_part('mini-tutorial'); ?>
+  <?php get_template_part('front','noticias'); ?>
 <?php get_footer(); ?>

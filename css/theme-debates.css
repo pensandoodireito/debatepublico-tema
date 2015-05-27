@@ -18,6 +18,7 @@
   vertical-align: top;
 }
 .tabs-main .tabs-left {
+  position: relative;
   height: 100%;
   display: table;
   table-layout: fixed;
@@ -34,6 +35,13 @@
   border-bottom: 0;
   width: 20%;
   display: table-cell;
+}
+@media (max-width: 768px) {
+  .tabs-main .tabs-left > .nav-tabs {
+    width: 100%;
+    display: table-header-group;
+    box-shadow: 0px 2px 10px -4px #323232;
+  }
 }
 .tabs-main .tabs-left > .nav-tabs > li {
   float: none;
@@ -59,6 +67,11 @@
   content: "\f054";
   color: #fdd0cd;
 }
+@media (max-width: 768px) {
+  .tabs-main .tabs-left > .nav-tabs > .active > a:before {
+    content: "\f078";
+  }
+}
 .tabs-main .tabs-left > .nav-tabs > .active > a:hover,
 .tabs-main .tabs-left > .nav-tabs > .active > a:focus {
   border-color: #ddd transparent #ddd #ddd;
@@ -69,6 +82,12 @@
   background-color: #fff;
   height: 100%;
   display: table-cell;
+}
+@media (max-width: 768px) {
+  .tabs-main .tabs-left .tab-content {
+    width: 100%;
+    border-top: 4px solid #ccc;
+  }
 }
 .tabs-main .tabs-left .tab-content > .tab-pane {
   display: none;
@@ -95,9 +114,6 @@
   border-width: 1px 0 0 0;
   padding: 10px;
 }
-.comments-structure li.list-group-item:hover {
-  background-color: rgba(86, 61, 124, 0.1);
-}
 .comments-structure li.list-group-item:first-child {
   border-top: none;
 }
@@ -114,17 +130,35 @@
 }
 .comments-structure .comments-line .comments-image {
   float: left;
-  padding: 0 15px;
+  padding: 0;
+  width: 40px;
+  text-align: center;
+}
+.comments-structure .comments-line .comments-image img {
+  border-radius: 16px;
+  height: 32px;
+  width: 32px;
+  text-align: center;
 }
 .comments-structure .comments-line .comments-text {
   font-size: 12px;
   float: left;
   width: 90%;
-  padding: 0 15px;
+  padding: 0 15px 15px 15px;
+  position: relative;
 }
 .comments-structure .comments-line .comments-mic-info {
   color: #666666;
   font-size: 11px;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 26%);
+  padding-top: 25px;
+  width: 90%;
+}
+.comments-structure .comments-line .comment-comment {
+  height: 80px;
+  overflow: hidden;
 }
 .comments-structure .comments-main {
   margin: 20px -15px 0 -15px;
@@ -146,9 +180,6 @@
 .comments-structure .comments-main .one-col {
   padding: 0 15px;
 }
-.comments-structure .comments-main .one-col .comments-image {
-  width: 10%;
-}
 .comments-structure .comments-main .one-col .comments-text {
   width: 90%;
 }
@@ -159,9 +190,6 @@
 }
 .comments-structure .comments-main .two-col:after {
   clear: both;
-}
-.comments-structure .comments-main .two-col .comments-image {
-  width: 20%;
 }
 .comments-structure .comments-main .two-col .comments-text {
   width: 80%;
@@ -175,6 +203,19 @@
 .comments-structure .comments-main .two-col .comments-col:first-child {
   border-left: 0;
 }
+@media (max-width: 992px) {
+  .comments-structure .comments-main .two-col .comments-col {
+    float: none;
+    width: 100%;
+    border-left: none;
+    border-top: 2px solid #ccc;
+    padding-top: 20px;
+    margin-top: 20px;
+  }
+  .comments-structure .comments-main .two-col .comments-col:first-child {
+    border-top: 0;
+  }
+}
 .comments-structure .comments-main .three-col:before,
 .comments-structure .comments-main .three-col:after {
   content: " ";
@@ -182,9 +223,6 @@
 }
 .comments-structure .comments-main .three-col:after {
   clear: both;
-}
-.comments-structure .comments-main .three-col .comments-image {
-  width: 25%;
 }
 .comments-structure .comments-main .three-col .comments-text {
   width: 75%;
@@ -197,4 +235,27 @@
 }
 .comments-structure .comments-main .three-col .comments-col:first-child {
   border-left: 0;
+}
+@media (max-width: 992px) {
+  .comments-structure .comments-main .three-col .comments-col {
+    float: none;
+    width: 100%;
+    border-left: none;
+    border-top: 2px solid #ccc;
+    padding-top: 20px;
+    margin-top: 20px;
+  }
+  .comments-structure .comments-main .three-col .comments-col:first-child {
+    border-top: 0;
+  }
+}
+.ficha-tecnica {
+  padding: 20px 0;
+  background-color: #fff;
+}
+.ficha-tecnica .thumbnail {
+  min-height: 450px;
+}
+.ficha-tecnica .panel {
+  min-height: 450px;
 }

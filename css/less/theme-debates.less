@@ -5,11 +5,18 @@
     }
     height: 100%;
     .tabs-left {
+        position: relative;
         height: 100%;
         display: table;
         table-layout: fixed;
         .clearfix();
         & > .nav-tabs {
+            @media(max-width: @screen-sm) {
+                //background-color: #fff;
+                width: 100%;
+                display: table-header-group;
+                box-shadow: 0px 2px 10px -4px rgba(50, 50, 50, 1);
+            }
             border-bottom: 0;
             width: 20%;
             display: table-cell;
@@ -36,6 +43,10 @@
                         right: 0;
                         content: "\f054";
                         color: #fdd0cd;
+                        @media(max-width: @screen-sm) {
+                           content: "\f078";
+                           //background-color:  
+                        }
                     }
                     &:hover,
                     &:focus {
@@ -46,6 +57,10 @@
             }
         }
         .tab-content {
+            @media(max-width: @screen-sm) {
+                width: 100%;
+                border-top: 4px solid #ccc;
+            }
             width: 80%;
             background-color: #fff;
             height: 100%;
@@ -82,9 +97,6 @@
         border: solid #dddddd;
         border-width: 1px 0 0 0;
         padding: 10px;
-        &:hover {
-            background-color: rgba(86, 61, 124, .1);
-        }
         &:first-child {
             border-top: none;
         }
@@ -94,17 +106,35 @@
         .clearfix();
         .comments-image {
             float: left;
-            padding: 0 15px;
+            padding: 0;
+            width: 40px;
+            text-align: center;
+            img {
+                border-radius: 16px;
+                height: 32px;
+                width: 32px;
+                text-align: center;
+            }
         }
         .comments-text {
             font-size: 12px;
             float: left;
             width: 90%;
-            padding: 0 15px;
+            padding: 0 15px 15px 15px;
+            position: relative;
         }
         .comments-mic-info {
             color: #666666;
             font-size: 11px;
+            position: absolute;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 26%);
+            padding-top: 25px;
+            width: 90%;
+        }
+        .comment-comment {
+            height: 80px;
+            overflow: hidden;
         }
     }
     .comments-main {
@@ -118,18 +148,14 @@
         }
         .one-col {
             padding: 0 15px;
-            .comments-image {
-                width: 10%;
-            }
+            .comments-image {}
             .comments-text {
                 width: 90%;
             }
         }
         .two-col {
             .clearfix();
-            .comments-image {
-                width: 20%;
-            }
+            .comments-image {}
             .comments-text {
                 width: 80%;
             }
@@ -141,13 +167,22 @@
                 &:first-child {
                     border-left: 0;
                 }
+                @media(max-width: @screen-md) {
+                    float: none;
+                    width: 100%;
+                    border-left: none;
+                    border-top: 2px solid #ccc;
+                    padding-top: 20px;
+                    margin-top: 20px;
+                    &:first-child {
+                        border-top: 0;
+                    }
+                }
             }
         }
         .three-col {
             .clearfix();
-            .comments-image {
-                width: 25%;
-            }
+            .comments-image {}
             .comments-text {
                 width: 75%;
             }
@@ -159,7 +194,28 @@
                 &:first-child {
                     border-left: 0;
                 }
+                @media(max-width: @screen-md) {
+                    float: none;
+                    width: 100%;
+                    border-left: none;
+                    border-top: 2px solid #ccc;
+                    padding-top: 20px;
+                    margin-top: 20px;
+                    &:first-child {
+                        border-top: 0;
+                    }
+                }
             }
         }
     }
+}
+
+
+//ficha-tecnica
+
+.ficha-tecnica{
+    padding: 20px 0;
+    background-color: #fff;
+    .thumbnail{ min-height: 450px;}
+    .panel{ min-height: 450px;}
 }
