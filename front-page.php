@@ -354,36 +354,20 @@
                 </div>
                 <div class="col-md-8">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/anti-corrupcao/img-anti-corrupcao-002.png" class="img-adptive" alt="Logo: Medidas de combate à corrupção e a impunidade ">
-</a>
-                                <div class="caption">
-                                    <h3 class="red"><a href="#">Lorem ipsum dolor sit amet</a></h3>
-                                    <p><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae nisi molestie, hendrerit velit ut, ornare dolor</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/anti-corrupcao/img-anti-corrupcao-001.png" class="img-adptive" alt="Logo: Medidas de combate à corrupção e a impunidade ">
-</a>
-                                <div class="caption">
-                                    <h3 class="red"><a href="#">Lorem ipsum dolor sit amet</a></h3>
-                                    <p><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae nisi molestie, hendrerit velit ut, ornare dolor</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/anti-corrupcao/img-anti-corrupcao-002.png" class="img-adptive" alt="Logo: Medidas de combate à corrupção e a impunidade ">
-</a>
-                                <div class="caption">
-                                    <h3 class="red"><a href="#">Lorem ipsum dolor sit amet</a></h3>
-                                    <p><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae nisi molestie, hendrerit velit ut, ornare dolor</a></p>
-                                </div>
-                            </div>
-                        </div>
+                    <?php
+                    $paginas = get_pages();
+                        foreach ($paginas as $pagina) {
+                            echo '<div class="col-md-4">';
+                            echo '<div class="thumbnail">';
+                            echo '<a href="' . get_page_link( $pagina->ID ) . '">';
+                            echo  get_the_post_thumbnail( $pagina->ID, 'post-thumbnail' , array('class'=>'img-adptive'));
+                            echo '</a>';
+                            echo '<div class="caption">';
+                            echo '<h3 class="red"><a href="' . get_page_link( $pagina->ID ) . '">' . $pagina->post_title . '</a></h3>';
+                            echo '<p><a href="' . get_page_link( $pagina->ID ) . '">' . $pagina->post_excerpt . '</a></p>';
+                            echo '</div></div></div>';
+                        }
+                    ?>
                     </div>
                 </div>
             </div>
