@@ -18,7 +18,7 @@ if ($situacao->slug == 'comresolucao') {
 } else if ($situacao->slug == 'emvotacao') {
     $title = __('Usuários que já votaram', 'delibera');
 } else {
-    $title = __('Discussão sobre a pauta', 'delibera');
+    $title = __('Comentários', 'delibera');
 }
 
 if (($situacao->slug == "validacao" || $situacao->slug == "emvotacao") && !$delibera_comments_padrao === true) {
@@ -34,7 +34,20 @@ if (($situacao->slug == "validacao" || $situacao->slug == "emvotacao") && !$deli
     
     <div id="<?php echo ($situacao->slug == 'comresolucao') ? 'encaminhamentos' : 'comments'; ?>" class="comments-area">
         <?php if (have_comments()) : ?>
-            <h2 class="comments-title bottom"><?php echo $title; ?></h2>
+        <div class="row">
+            <div class="col-sm-9 col-xs-6">
+                <h2 class="comments-title bottom"><?php echo $title; ?></h2>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+                <select class="form-control">
+                    <option selected>Ordenar por:</option>
+                    <option>Lorem ipsum</option>
+                    <option>Vivamus tincidunt</option>
+                    <option>Cras venenatis</option>
+                    <option>Mauris venenatis</option>
+                </select>
+            </div>
+        </div>
             <?php if ($situacao->slug == 'validacao') : ?>
                 <div class="votes">
                     <div class="votes-agree">
@@ -74,7 +87,7 @@ if (($situacao->slug == "validacao" || $situacao->slug == "emvotacao") && !$deli
                     <?php wp_list_comments($args, $encaminhamentos); ?>
                 </ol>
                 
-                <h2 class="comments-title bottom"><?php _e('Discussão sobre a pauta', 'delibera'); ?></h2>
+                <h2 class="comments-title bottom"><?php _e('Comentários', 'delibera'); ?></h2>
                 <ol class="commentslist">
                     <?php wp_list_comments($args, $discussoes); ?>
                 </ol>
