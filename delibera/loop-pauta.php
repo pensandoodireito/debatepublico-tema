@@ -21,20 +21,27 @@ $seguir = true;
             <p class="deadline fontsize-sm text-muted pull-left ml-lg">
               <i class="fa fa-calendar"></i>
               <?php if (delibera_get_prazo($post->ID) == -1) {
-              echo 'Prazo encerrado';
+                echo 'Prazo encerrado';
               } else {
-              printf(_n('Encerra em um dia', 'Encerra em %1$s dias', delibera_get_prazo($post->ID), 'delibera'), number_format_i18n(delibera_get_prazo($post->ID)));
+                printf(_n('Encerra em um dia', 'Encerra em %1$s dias', delibera_get_prazo($post->ID), 'delibera'), number_format_i18n(delibera_get_prazo($post->ID)));
               } ?>
             </p>
           </div>
         </div>
         <div class="col-sm-6">
-          <select class="form-control">
+          <select class="form-control" onchange="javascript:window.location.href=this.value;">
             <option selected>Navegue por eixos</option>
-            <option>Lorem ipsum dolor sit amet, consectetur adipiscing elit</option>
-            <option>Vivamus tincidunt turpis sed ex aliquam varius</option>
-            <option>Cras venenatis magna vitae urna faucibus</option>
-            <option>Mauris venenatis massa in dolor tempor posuere</option>
+            <?php
+                $eixos = get_terms('tema', array(
+                            'hide_empty' => 0,
+                            'orderby' => 'name',
+                            'order' => 'ASC'
+                        )
+                    );
+                foreach( $eixos as $eixo ) {
+                    echo '<option value="' . get_term_link($eixo) . '">' . $eixo->name . '</option>';
+                }
+            ?>
           </select>
         </div>
       </div>
@@ -74,7 +81,7 @@ $seguir = true;
       <div class="col-sm-3">
         <div class="panel panel-default text-center">
           <div class="panel-body">
-            <p class="h1 red font-roboto"><i class="fa fa-comments-o"></i> 00000</p>
+            <p class="h1 red font-roboto"><i class="fa fa-comments-o"></i> <?php echo delibera_get_comments_count_by_type( get_the_ID() ); ?></p>
             <p><strong>Comentários</strong></p>
           </div>
           <div class="panel-footer">
@@ -85,15 +92,7 @@ $seguir = true;
     </div>
     <div class="divider-top mb-lg">
       <div class="row">
-        <div class="col-md-5 mt-sm">
-          Vote:
-          <div class="btn-group" role="group" aria-label="...">
-            <button type="button" class="btn btn-success"><i class="fa fa-thumbs-o-up"></i> Concordo</button>
-            <button type="button" class="btn btn-danger"><i class="fa fa-thumbs-o-down"></i> Discordo</button>
-          </div>
-          10 votos no total
-        </div>
-        <div class="col-md-7 mt-sm text-right">
+        <div class="col-md-12 mt-sm text-right">
           <div class="btn-group" role="group" aria-label="...">
             <?php $social_share_url = pensandoodireito_bitly_url(get_the_permalink()); ?>
             <a href="javascript:var socialw = window.open('https://www.facebook.com/sharer/sharer.php?u=<?php echo $social_share_url; ?>', 'socialw', 'width=470, height=250, location=no');" class="btn btn-default fontsize-sm text-muted"><i class="fa fa-facebook-square"></i> Facebook</a>
