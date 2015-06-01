@@ -41,7 +41,7 @@
                                 $eixos = get_terms('tema', array(
                                     'hide_empty' => 0,
                                     'orderby' => 'name',
-                                    'order' => 'DESC'
+                                    'order' => 'ASC'
                                     )
                                 );
                                 if ( empty( $eixos ) || is_wp_error( $eixos ) ) {
@@ -370,7 +370,7 @@
                                 ?>
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
             </div>
