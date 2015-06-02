@@ -57,7 +57,7 @@
                                 $eixos = get_terms('tema', array(
                                         'hide_empty' => 0,
                                         'orderby' => 'name',
-                                        'order' => 'DESC'
+                                        'order' => 'ASC'
                                     )
                                 );
                                 if (empty($eixos) || is_wp_error($eixos)) {
@@ -92,7 +92,7 @@
                                             }
                                             echo '" id="eixo' . $eixo->term_id . '">';
                                             // descrição do eixo/tema
-                                            echo $eixo->description;
+                                            echo apply_filters('the_content', $eixo->description);
                                             // Agora iremos buscar as pautas deste
                                             // eixo que foram comentadas mais
                                             // recentemente.
@@ -365,7 +365,7 @@
                     <div class="col-md-8">
                         <div class="row">
                             <?php
-                                $paginas = get_pages();
+                                $paginas = get_pages((array( 'sort_column' => 'menu_order' )));
                                 foreach ($paginas as $pagina) {
                                     echo '<div class="col-sm-4">';
                                     echo '<div class="thumbnail">';
