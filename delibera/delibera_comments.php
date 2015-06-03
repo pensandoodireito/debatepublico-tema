@@ -39,13 +39,13 @@ if (($situacao->slug == "validacao" || $situacao->slug == "emvotacao") && !$deli
                 <h2 class="comments-title bottom"><?php echo $title; ?></h2>
             </div>
             <div class="col-sm-3 col-xs-6">
-                <select class="form-control">
-                    <option selected>Ordenar por:</option>
-                    <option>Lorem ipsum</option>
-                    <option>Vivamus tincidunt</option>
-                    <option>Cras venenatis</option>
-                    <option>Mauris venenatis</option>
-                </select>
+<!--                <select class="form-control">-->
+<!--                    <option selected>Ordenar por:</option>-->
+<!--                    <option>Lorem ipsum</option>-->
+<!--                    <option>Vivamus tincidunt</option>-->
+<!--                    <option>Cras venenatis</option>-->
+<!--                    <option>Mauris venenatis</option>-->
+<!--                </select>-->
             </div>
         </div>
             <?php if ($situacao->slug == 'validacao') : ?>
