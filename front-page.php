@@ -378,15 +378,15 @@
 	</div>
 	<div class="row text-center">
 		<div class="col-sm-5 col-md-offset-1">
-			<p>Conselho Nacional do Ministério Público</p>
+			<p>Secretaria Nacional de Justiça/MJ</p>
 			<p>Secretaria de Assuntos Legislativos/MJ</p>
 			<p>Controladoria-Geral da União</p>
 		</div>
 		<div class="col-sm-5 divider-left">
 			<p>Conselho Federal da Ordem dos Advogados do Brasil</p>
-			<p>Secretaria Nacional de Justiça</p>
 			<p>Conselho Nacional de Justiça</p>
 			<p>Advocacia-Geral da União</p>
+			<p>Conselho Nacional do Ministério Público</p>
 		</div>
 	</div>
 </div>
