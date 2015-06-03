@@ -336,26 +336,27 @@
                             <div class="col-xs-12">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">Ficha técnica</div>
+                                    <?php $options = get_option( 'participacao_settings' ); ?>
                                     <ul class="list-group">
                                         <li class="list-group-item">
                                             <p><small><i class="fa fa-calendar divider-right"></i> Data de abertura:</small></p>
-                                            <p class="h4"><strong>00 de Janeiro de 0000</strong></p>
+                                            <p class="h4"><strong><?php echo @$options['participacao_data_abertura']; ?></strong></p>
                                         </li>
                                         <li class="list-group-item">
                                             <p><small><i class="fa fa-list-ol divider-right"></i> Fase do debate:</small></p>
-                                            <p class="h4"><strong>Abertura</strong></p>
+                                            <p class="h4"><strong><?php echo @$options['participacao_fase_debate']; ?></strong></p>
                                         </li>
                                         <li class="list-group-item">
                                             <p><small><i class="fa fa-calendar divider-right"></i> Data de encerramento:</small></p>
-                                            <p class="h4"><strong>00 de Janeiro de 0000</strong></p>
+                                            <p class="h4"><strong><?php echo @$options['participacao_data_encerramento']; ?></strong></p>
                                         </li>
                                         <li class="list-group-item">
-                                            <p><small><i class="fa fa-gavel divider-right"></i> Lei:</small></p>
-                                            <p class="h5"><strong>000.000 de 23 de abril de 2014</strong></p>
+                                            <p><small><i class="fa fa-gavel divider-right"></i> Normas em discussão:</small></p>
+                                            <p class="h5"><strong><?php echo @$options['participacao_normas']; ?></strong></p>
                                         </li>
                                         <li class="list-group-item">
                                             <p><small><i class="fa fa-list-ol divider-right"></i> Contato:</small></p>
-                                            <p><strong>debate@mj.gov.br</strong></p>
+                                            <p><strong><a href="mailto:<?php echo bloginfo('admin_email') ?>"><?php echo bloginfo('admin_email') ?></a></strong></p>
                                         </li>
                                     </ul>
                                 </div>
