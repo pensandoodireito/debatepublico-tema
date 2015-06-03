@@ -82,7 +82,6 @@ $seguir = true;
         <div class="panel panel-default text-center">
           <div class="panel-body">
             <p class="h1 red font-roboto"><i class="fa fa-comments-o"></i> <?php echo delibera_get_comments_count_by_type( get_the_ID() ); ?></p>
-            <p><strong>Comentários</strong></p>
           </div>
           <div class="panel-footer">
             <p class="h4"><a href="#"><strong>Participe!</strong></a></p>
