@@ -372,7 +372,6 @@
     </div>
 </div>
 <?php get_template_part('mini-tutorial'); ?>
-<?php get_template_part('front', 'noticias'); ?>
 <div class="container">
 	<div class="row text-center pt-md mb-md">
 		<h4 class="red font-roboto"> <strong>Realização</strong></h4>
