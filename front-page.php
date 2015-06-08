@@ -349,7 +349,7 @@
                     <div class="col-md-8">
                         <div class="row">
                             <?php
-                                $paginas = get_pages((array( 'sort_column' => 'menu_order' )));
+                                $paginas = get_pages((array( 'sort_column' => 'menu_order', 'number' => 3 )));
                                 foreach ($paginas as $pagina) {
                                     echo '<div class="col-sm-4">';
                                     echo '<div class="thumbnail">';
