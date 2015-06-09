@@ -178,7 +178,7 @@
                                                             echo '<div class="comments-text">';
                                                             echo '<div class="comment-content">';
                                                             echo '<div class="comment-comment"><p>';
-                                                            echo $comentario->comment_content;
+                                                            echo '<a href="' . get_permalink(get_the_ID()) . '#delibera-comment-' . $comentario->comment_ID . '">' . $comentario->comment_content . '</a>';
                                                             echo '</p></div>';//comment-comment
                                                             echo '<div class="comments-mic-info"><small>Comentado por: ';
                                                             //<a href="#">jõao Paulo da Silva</a> <span class="ml-md"><i class="fa fa-clock-o"></i> Há 15 min</span>
@@ -224,7 +224,7 @@
                                                                 echo '<div class="comments-text">';
                                                                 echo '<div class="comment-content">';
                                                                 echo '<div class="comment-comment"><p>';
-                                                                echo $comentario->comment_content;
+                                                                echo '<a href="' . get_permalink(get_the_ID()) . '#delibera-comment-' . $comentario->comment_ID . '">' . $comentario->comment_content . '</a>';
                                                                 echo '</p></div>';//comment-comment
                                                                 echo '<div class="comments-mic-info"><small>Comentado por: ';
                                                                 //<a href="#">jõao Paulo da Silva</a> <span class="ml-md"><i class="fa fa-clock-o"></i> Há 15 min</span>
@@ -271,7 +271,7 @@
                                                                 echo '<div class="comments-text">';
                                                                 echo '<div class="comment-content">';
                                                                 echo '<div class="comment-comment"><p>';
-                                                                echo $comentario->comment_content;
+                                                                echo '<a href="' . get_permalink(get_the_ID()) . '#delibera-comment-' . $comentario->comment_ID . '">' . $comentario->comment_content . '</a>';
                                                                 echo '</p></div>';//comment-comment
                                                                 echo '<div class="comments-mic-info"><small>Comentado por: ';
                                                                 //<a href="#">jõao Paulo da Silva</a> <span class="ml-md"><i class="fa fa-clock-o"></i> Há 15 min</span>
