@@ -84,7 +84,27 @@ $seguir = true;
             <p class="h1 red font-roboto"><i class="fa fa-comments-o"></i> <?php echo delibera_get_comments_count_by_type( get_the_ID() ); ?></p>
           </div>
           <div class="panel-footer">
-            <p class="h4"><a href="#"><strong>Participe!</strong></a></p>
+              <p class="h4">
+          <?php
+              if (is_user_logged_in() && delibera_current_user_can_participate()) {
+                  global $current_user;
+                  get_currentuserinfo();
+
+                  printf(
+                      __('<a href="%1$s"><strong>Participe!</strong></a>'),
+                      '#respond'
+                  );
+              } else {
+                  $current_url = add_query_arg($wp->query_string, '', home_url($wp->request));
+
+                  printf(
+                      __('Para participar, você precisa <a href="%1$s" title="Faça o login">fazer o login</a> ou <a href="%2$s" title="Registre-se" class="register">cadastrar-se no site</a>.'),
+                      wp_login_url($current_url),
+                      get_site_url(1, '/wp-signup.php')
+                  );
+              }
+          ?>
+              </p>
           </div>
         </div>
       </div>
