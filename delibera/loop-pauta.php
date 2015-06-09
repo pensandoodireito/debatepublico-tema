@@ -91,7 +91,7 @@ $seguir = true;
                   get_currentuserinfo();
 
                   printf(
-                      __('<a href="%1$s"><strong>Participe!</strong></a>'),
+                      __('<a href="%1$s" class="smoothscroll"><strong>Participe!</strong></a>'),
                       '#respond'
                   );
               } else {
@@ -130,3 +130,6 @@ $seguir = true;
   </div>
   <?php endwhile; ?>
   <?php endif; ?>
+<div class="back-to-top">
+    <a href="#" class="white"><i class="fa fa-level-up"></i> Voltar para o topo</a>
+</div>
