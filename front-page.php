@@ -33,7 +33,7 @@
                     <h2 class="font-roboto red">Eixos em debate</h2>
                 </div>
                 <div class="col-sm-6 text-right">
-                    <p class="mt-sm"><strong><a href="<?php echo site_url("/anticorrupcao/pauta/"); ?>">Confira todas as pautas</a></strong></p>
+                    <p class="mt-sm"><strong><a href="<?php echo site_url("/pauta/"); ?>">Confira todas as pautas</a></strong></p>
                 </div>
             </div>
         </div>
@@ -297,6 +297,9 @@
                                                         echo '</div>'; //comments-col
                                                     }
                                                     echo '</div>'; //three-col
+                                                    echo '<div class="col-sm-12 text-right">';
+                                                    echo '<p class="mt-sm"><strong>Aqui estão as pautas recém comentadas. <a href="' . site_url("/pauta/?tema_filtro[" . $eixo->slug . "]=on") . '">Confira todas as pautas nesse eixo</a></strong>.</p>';
+                                                    echo '</div>';
                                                 }
                                                 echo '</div>'; //comments-main
                                                 echo '</div>'; //comments-structure
