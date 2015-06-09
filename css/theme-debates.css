@@ -1,16 +1,3 @@
-/*
-@path-nv1: 		"..";
-@path-nv2: 		"../..";
-@path-nv3: 		"../../..";
-@path-nv4: 		"../../../..";
-@path-nv5: 		"../../../../..";
-
-@path-var-boots:    "bootstrap/variables.less";
-@path-mixins-boots: "bootstrap/mixins.less";
-@path-var-theme:    "theme/theme-variables.less";
-@path-less: 		"css/less";
-@path-participacao: "participacao-tema";
-*/
 .tabs-main {
   height: 100%;
 }
@@ -154,7 +141,7 @@
   bottom: 0;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 26%);
   padding-top: 25px;
-  width: 90%;
+  width: 100%;
 }
 .comments-structure .comments-line .comment-comment {
   height: 80px;
@@ -182,6 +169,11 @@
 }
 .comments-structure .comments-main .one-col .comments-text {
   width: 90%;
+}
+@media (max-width: 992px) {
+  .comments-structure .comments-main .one-col .comments-text {
+    width: 75%;
+  }
 }
 .comments-structure .comments-main .two-col:before,
 .comments-structure .comments-main .two-col:after {
