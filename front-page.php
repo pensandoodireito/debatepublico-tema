@@ -2,11 +2,11 @@
 <div id="anti-corr">
     <div class="anti-corr-top">
         <div class="container">
-            <div class="row">
-                <div class="col-md-offset-1 col-sm-4 text-center">
+            <div class="row pb-lg">
+                <div class="col-md-offset-1 col-sm-4 text-center mt-md">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/anti-corrupcao/logo-anti-corrupcao-v02.png" class="img-adptive mt-lg" alt="Logo: Medidas de combate à corrupção e a impunidade ">
                 </div>
-                <div class="col-md-offset-1 col-sm-6 col-md-4 white">
+                <div class="col-md-offset-1 col-sm-6 col-md-4 white mt-md">
                     <h1 class="font-roboto h1 mt-lg"><strong>Participe, opine, ajude!</strong></h1>
                     <p class="mt-md">Esta consulta pública visa a proporcionar a mais ampla participação da sociedade na construção de ideias e soluções para temas essenciais a este enfrentamento: a eficiência e a eficácia de processos judiciais e administrativos. Opine. Participe.</p>
                 </div>
@@ -28,7 +28,14 @@
     </div>
     <div class="anti-corr-eixos">
         <div class="container">
-            <h2 class="font-roboto red">Eixos em debate</h2>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2 class="font-roboto red">Eixos em debate</h2>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <p class="mt-sm"><strong><a href="<?php echo site_url("/anticorrupcao/pauta/"); ?>">Confira todas as pautas</a></strong></p>
+                </div>
+            </div>
         </div>
         <div class="tabs-main">
             <div class="container">
