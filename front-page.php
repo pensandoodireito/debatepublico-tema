@@ -19,7 +19,7 @@
                 <div class="col-sm-6 col-md-offset-1">
                     <h2 class="font-roboto red h1">O que é?</h2>
                     <p class="mt-md">O enfrentamento da corrupção depende da ação integrada e articulada de todos os órgãos estatais, abarcando os três poderes de todas as esferas da Federação, e do envolvimento da sociedade civil, fundamental para a erradicação deste problema.</p>
-                    <p class="mt-sm"><a href="<?php echo site_url("/anticorrupcao/pauta/"); ?>" class="btn btn-danger font-roboto"><strong>PARTICIPE</strong></a></p>
+                    <p class="mt-sm"><a href="<?php echo site_url("/pauta/"); ?>" class="btn btn-danger font-roboto"><strong>PARTICIPE</strong></a></p>
                 </div>
                 <div class="col-sm-4 text-center">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/anti-corrupcao/img-anti-corrupcao-007.png" class="img-adptive line-5" alt="Logo: Medidas de combate à corrupção e a impunidade ">
