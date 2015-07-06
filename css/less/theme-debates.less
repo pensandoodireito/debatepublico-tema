@@ -1,7 +1,6 @@
 @import "../../../participacao-tema/css/less/elements.less";
 // id da div que é mãe de todo o conteúdo dos debates
-
-#debatepublico-generic{}
+#debatepublico-generic {}
 
 //tabs na esquerda, para área dinâmica de comentários
 .tabs-main {
@@ -49,8 +48,8 @@
                         content: "\f054";
                         color: #fdd0cd;
                         @media(max-width: @screen-sm) {
-                           content: "\f078";
-                           //background-color:  
+                            content: "\f078";
+                            //background-color:  
                         }
                     }
                     &:hover,
@@ -135,7 +134,7 @@
             bottom: 0;
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 26%);
             padding-top: 25px;
-            width: 90%;
+            width: 100%;
         }
         .comment-comment {
             height: 80px;
@@ -156,6 +155,9 @@
             .comments-image {}
             .comments-text {
                 width: 90%;
+                @media(max-width: @screen-md) {
+                    width: 75%;
+                }
             }
         }
         .two-col {
@@ -215,12 +217,14 @@
     }
 }
 
-
 //ficha-tecnica
-
-.ficha-tecnica{
+.ficha-tecnica {
     padding: 20px 0;
     background-color: #fff;
-    .thumbnail{ min-height: 450px;}
-    .panel{ min-height: 450px;}
+    .thumbnail {
+        min-height: 450px;
+    }
+    .panel {
+        min-height: 450px;
+    }
 }
