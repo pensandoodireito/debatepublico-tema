@@ -15,7 +15,10 @@ body {
   height: 100% !important;
 }
 #anti-corr .anti-corr-top {
+  /*
+  Desativando a imagem de fundo do CSS para funcionar de forma dinamica
   background: url("../images/anti-corrupcao/bck-anti-corrupcao.jpg") repeat #5d7987;
+  */
   padding: 0;
   margin: 0;
 }
