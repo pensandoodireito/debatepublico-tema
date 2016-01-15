@@ -254,3 +254,13 @@ register_sidebar( array(
         'before_title'  => '',
         'after_title'   => '',
 ) );
+
+register_sidebar( array(
+        'id'            => 'debate-publico-noticias',
+        'name'          => 'Notícias',
+        'description'   => __( 'Área de exibição das notícias', 'debate-publico' ),
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+) );

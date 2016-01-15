@@ -53,6 +53,9 @@
 if ( is_active_sidebar( 'debate-publico-como-participar' ) ) {
     dynamic_sidebar( 'debate-publico-como-participar' );
 }
+if ( is_active_sidebar( 'debate-publico-noticias' ) ) {
+    dynamic_sidebar( 'debate-publico-noticias' );
+}
 if ( is_active_sidebar( 'debate-publico-realizacao' ) ) {
     dynamic_sidebar( 'debate-publico-realizacao' );
 }
